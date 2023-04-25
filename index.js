@@ -4,6 +4,7 @@ const cors = require('cors')
 require('dotenv').config()
 require('./db/mongodb')
 const users = require("./apis/users");
+const product = require("./apis/product");
 const apiRoutes = require('./apis/index')
 const bodyParser = require('body-parser');
 
@@ -21,7 +22,7 @@ app.get('/', (req,res)=>{
 const PUERTO = process.env.PUERTO || 5000
 
 app.use('/users', users)
-
+app.use('/product', product)
 app.listen(PUERTO, ()=>{
     console.log(`Servidor conectado en puerto ${PUERTO}`)
 })

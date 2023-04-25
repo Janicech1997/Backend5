@@ -7,12 +7,12 @@ const { productsController } = require("../controllers");
 const { getProducts, createProduct, updateProduct, deleteProduct } =
   productsController;
 
-router.get("/", async (req, res) => {
+router.get("/products", async (req, res) => {
   const products = await getProducts();
   res.send(products);
 });
 
-router.post("/", async (req, res) => {
+router.post("/createProduct", async (req, res) => {
   const body = req.body;
 
   try {
